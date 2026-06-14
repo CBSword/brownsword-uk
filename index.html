@@ -2,4 +2,13 @@
 <html><body>
 <h1>Tesla Fleet API Key</h1>
 <p>This domain hosts the public key for Tesla Fleet API authentication.</p>
+<div id="auth-code"></div>
+<script>
+const params = new URLSearchParams(window.location.search);
+const code = params.get("code");
+const state = params.get("state");
+if (code) {
+  document.getElementById("auth-code").innerHTML = "<h2>Authorization Code:</h2><code>" + code + "</code>";
+}
+</script>
 </body></html>
